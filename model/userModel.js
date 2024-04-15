@@ -3,11 +3,17 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   email: {
     type: "string",
-    required: true,
   },
   password: {
     type: "string",
-    required: true,
+  },
+  otp: {
+    type: "number",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    expires: 60, // delete after second
   },
 });
 
